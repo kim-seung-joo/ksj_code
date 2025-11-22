@@ -1,0 +1,118 @@
+body{
+    background-color: rgb(230, 219, 208);
+
+}
+
+.main{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+    
+}
+    
+
+header h1{
+    text-align: center;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+}
+input[type="text"]{
+    border-radius: 1px solid gray;
+    width: 385px;
+    height: 30px;
+    outline: 0;
+    border: none;
+    font-size: 1.5em;
+    background: whitesmoke;
+    padding: 5px;
+    border-radius: 15px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+    margin-top: 30px;
+    
+}
+button{
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    background-color: linen;
+    border-radius: 15px;
+    border: 1px solid rgb(230, 219, 208);
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+    cursor:pointer;
+    
+}
+.todolist{
+    background-color: rgb(249, 245, 157);
+    margin-top: 30px;
+    padding: 10px 40px 10px 0px;
+    border-radius: 15px;
+    width: 440px;
+}
+ul{
+    list-style: none;
+}
+li{
+    border-top: 1px solid black;
+}
+#clear{
+    float: right;
+    text-align: right;
+    color: rgb(61, 56, 56);
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: linen;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+    cursor:pointer;
+
+  }
+  .del{
+    background-color: linen;
+    text-align: center;
+    padding: 0px 4px 0px 4px;
+    color: rgb(78, 66, 66);
+    cursor: pointer;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+}
+.log{
+    text-align: center;
+}
+
+.name{
+    text-align: center;
+    margin-left: 350px;
+    font-size: 20px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+
+}
+#id{
+    text-align: center;
+    margin-left: 350px;
+    font-size: 20px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+}
+#name{
+    text-align: center;
+    margin-left: 350px;
+    font-size: 20px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Gaegu', cursive;
+}
