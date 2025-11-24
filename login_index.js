@@ -1,4 +1,3 @@
-//--------------------------------------------------------
 let loggedInUser = null;
 let todoKey = null;
 let todos = [];
@@ -7,6 +6,7 @@ window.addEventListener('load', function() {
 
     loggedInUser = localStorage.getItem('loggedInUser');
     loggedname = localStorage.getItem('loggedname');
+    loggedpwd = localStorage.getItem('loggedpwd');
             
     if (!loggedInUser) {
         alert('로그인 후 접근하세요.');
@@ -14,10 +14,12 @@ window.addEventListener('load', function() {
         return;
     }
     const idElem = document.getElementById('id'); // id 표시 div
-    const nameElem = document.getElementById('name'); // name 표시 div
-
+    const nameElem = document.getElementById('name'); // name 표시
+    const pwdElem = document.getElementById('pwd'); 
+        
     idElem.textContent = '아이디:' + loggedInUser;
     nameElem.textContent = '이름:' + loggedname;
+    pwdElem.textContent = '비밀번호' + loggedpwd;
 
     todoKey = `todos_${loggedInUser}_${loggedname}`;
     todos = JSON.parse(localStorage.getItem(todoKey)) || [];
@@ -55,7 +57,7 @@ init();
 function init(){
     document.querySelector('form').addEventListener('submit', addToDo);
     document.getElementById('clear').addEventListener('click', clearTodoList);
-    document.deleteOrCheck('del').addEventListener('click', deleteOrCheck)
+    document.deleteOrCheck('del').addEventListener('click', deleteOrCheck);
     document.querySelector('ul').addEventListener('click',deleteOrCheck);
 }
 
@@ -116,3 +118,4 @@ function addTask(value) {
 
 //-------------------------------------------------------
 //로그인한 정보를 가져오기위해 localStorage를 사용
+
