@@ -56,6 +56,7 @@ function logout() {
 init();
 function init(){
     document.querySelector('form').addEventListener('submit', addToDo);
+    document.querySelector('ul').addEventListener('click', deleteToDo);
     document.getElementById('clear').addEventListener('click', clearTodoList);
     document.deleteOrCheck('del').addEventListener('click', deleteOrCheck);
     document.querySelector('ul').addEventListener('click',deleteOrCheck);
@@ -118,4 +119,5 @@ function addTask(value) {
 
 //-------------------------------------------------------
 //로그인한 정보를 가져오기위해 localStorage를 사용
+
 
