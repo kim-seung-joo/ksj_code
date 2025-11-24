@@ -5,21 +5,23 @@ let todos = [];
 window.addEventListener('load', function() {
 
     loggedInUser = localStorage.getItem('loggedInUser');
-    loggedname = localStorage.getItem('loggedname');
     loggedpwd = localStorage.getItem('loggedpwd');
-            
+    loggedname = localStorage.getItem('loggedname');
+    
     if (!loggedInUser) {
         alert('로그인 후 접근하세요.');
         location.href = 'login.html';
         return;
     }
-    const idElem = document.getElementById('id'); // id 표시 div
+    const idElem = document.getElementById('id'); // id 표시 
+    const pwdElem = document.getElementById('pwd'); // pwd 표시
     const nameElem = document.getElementById('name'); // name 표시
-    const pwdElem = document.getElementById('pwd'); 
+    
         
     idElem.textContent = '아이디:' + loggedInUser;
-    nameElem.textContent = '이름:' + loggedname;
     pwdElem.textContent = '비밀번호' + loggedpwd;
+    nameElem.textContent = '이름:' + loggedname;
+    
 
     todoKey = `todos_${loggedInUser}_${loggedname}`;
     todos = JSON.parse(localStorage.getItem(todoKey)) || [];
@@ -75,6 +77,7 @@ function deleteToDo(e){
     localStorage.setItem(todoKey, JSON.stringify(todos));
     renderTodos();
     console.log(loggedInUser,"글 제거됨:");
+    alert("글 제거를 했어요.");
 }
 
 function chcekToDo(e){
@@ -88,6 +91,7 @@ function clearTodoList(){
     todos = [];
     localStorage.setItem(todoKey, JSON.stringify(todos));
     renderTodos();
+    alert("전체 삭제 되었어요.");
 }
 
 
@@ -117,7 +121,6 @@ function addTask(value) {
 
 
 
-//-------------------------------------------------------
-//로그인한 정보를 가져오기위해 localStorage를 사용
+
 
 
