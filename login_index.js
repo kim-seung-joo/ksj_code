@@ -18,9 +18,8 @@ window.addEventListener('load', function() {
     const nameElem = document.getElementById('name'); // name 표시
     
         
-    idElem.textContent = '아이디:' + loggedInUser;
-    pwdElem.textContent = '비밀번호:' + loggedpwd;
-    nameElem.textContent = '이름:' + loggedname;
+    idElem.textContent = '아이디 : ' + loggedInUser;
+    nameElem.textContent = loggedname + '님의 todolist';
     
 
     todoKey = `todos_${loggedInUser}_${loggedpwd}_${loggedname}`;
@@ -36,9 +35,9 @@ function renderTodos() {
         const li = document.createElement('li');
         li.innerHTML = `
             <span class="del" data-index="${index}">삭제</span>
-            <input type="checkbox" data-index="${index}" ${todo.done ? 'checked' : ''}>
-            <label>${todo.task}</label>
+            <label>${todo.task}</label>     
         `;
+        //<input type="checkbox" data-index="${index}" ${todo.done ? 'checked' : ''}> 
         ul.appendChild(li);
     });
 }
@@ -72,26 +71,31 @@ function deleteOrCheck(e){
     }
 }
 function deleteToDo(e){
+    
+    if(confirm("해당 글을 삭제하시겠습니까?") == true){
     const index = e.target.dataset.index;
     todos.splice(index, 1);
     localStorage.setItem(todoKey, JSON.stringify(todos));
     renderTodos();
     console.log(loggedInUser,"글 제거됨:");
-    alert("글 제거를 했어요.");
+
+    }else{
+        alert('글 삭제를 취소했습니다.')
+    }
+    
 }
 
-function chcekToDo(e){
-    const index = e.target.dataset.index;
-    todos[index].done = e.target.checked;
-    localStorage.setItem(todoKey, JSON.stringify(todos));
-    renderTodos();
-}
-
-function clearTodoList(){
-    todos = [];
-    localStorage.setItem(todoKey, JSON.stringify(todos));
-    renderTodos();
-    alert("전체 삭제 되었어요.");
+function clearTodoList() {
+    if (todos.length > 0) {
+        if (confirm('정말 전체 글을 삭제하시겠습니까?')) {
+            todos = [];
+            localStorage.setItem(todoKey, JSON.stringify(todos));
+            renderTodos();
+            alert('전체 글을 삭제했습니다.');
+        }
+    } else {
+        alert('삭제할 글이 없습니다.');
+    }
 }
 
 
@@ -118,10 +122,4 @@ function addTask(value) {
     localStorage.setItem(todoKey, JSON.stringify(todos));
     renderTodos();
 }
-
-
-
-
-
-
 
