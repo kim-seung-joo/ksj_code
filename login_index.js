@@ -19,11 +19,11 @@ window.addEventListener('load', function() {
     
         
     idElem.textContent = '아이디:' + loggedInUser;
-    pwdElem.textContent = '비밀번호' + loggedpwd;
+    pwdElem.textContent = '비밀번호:' + loggedpwd;
     nameElem.textContent = '이름:' + loggedname;
     
 
-    todoKey = `todos_${loggedInUser}_${loggedname}`;
+    todoKey = `todos_${loggedInUser}_${loggedpwd}_${loggedname}`;
     todos = JSON.parse(localStorage.getItem(todoKey)) || [];
     renderTodos();
     }
@@ -118,6 +118,7 @@ function addTask(value) {
     localStorage.setItem(todoKey, JSON.stringify(todos));
     renderTodos();
 }
+
 
 
 
